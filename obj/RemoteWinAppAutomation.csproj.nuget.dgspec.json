@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Runningcopy - Copy\\RemoteWinAppAutomation.csproj": {}
+    "E:\\push\\RemoteWinAppAutomation.csproj": {}
   },
   "projects": {
-    "E:\\Runningcopy - Copy\\RemoteWinAppAutomation.csproj": {
+    "E:\\push\\RemoteWinAppAutomation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Runningcopy - Copy\\RemoteWinAppAutomation.csproj",
+        "projectUniqueName": "E:\\push\\RemoteWinAppAutomation.csproj",
         "projectName": "RemoteWinAppAutomation",
-        "projectPath": "E:\\Runningcopy - Copy\\RemoteWinAppAutomation.csproj",
+        "projectPath": "E:\\push\\RemoteWinAppAutomation.csproj",
         "packagesPath": "C:\\Users\\pbhar.LAPTOP-HTLJ4OVF\\.nuget\\packages\\",
-        "outputPath": "E:\\Runningcopy - Copy\\obj\\",
+        "outputPath": "E:\\push\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pbhar.LAPTOP-HTLJ4OVF\\AppData\\Roaming\\NuGet\\NuGet.Config"

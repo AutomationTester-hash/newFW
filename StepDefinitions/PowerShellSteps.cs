@@ -29,8 +29,8 @@ namespace RemoteWinAppAutomation.StepDefinitions
             _report = ReportManager.GetReporter(_config);
         }
 
-        [Given(@"I have connected to the remote VM PowerShell")]
-        public void GivenIHaveConnectedToTheRemoteVMPowerShell()
+    [Given(@"I have initialized the application for automation")]
+    public void GivenIHaveInitializedTheApplicationForAutomation()
         {
             Console.WriteLine("[PowerShellSteps] GivenIHaveConnectedToTheRemoteVMPowerShell executing.");
             Console.WriteLine("[PowerShellSteps] Connecting to PowerShell on remote/local machine...");
@@ -101,6 +101,18 @@ namespace RemoteWinAppAutomation.StepDefinitions
             _test.Pass($"Output contains expected text: {expected}");
 
         // --- PowerShell direct execution steps ---
+        }
+
+         [When(@"I erase the text in Notepad after 2 seconds")]
+        public void WhenIEraseTheTextInNotepadAfter2Seconds()
+        {
+            System.Threading.Thread.Sleep(2000);
+            if (_driver == null)
+                throw new Exception("Driver is not initialized.");
+            var edit = _driver.FindElementByClassName("Edit");
+            edit.SendKeys(OpenQA.Selenium.Keys.Control + "a");
+            System.Threading.Thread.Sleep(500);
+            edit.SendKeys(OpenQA.Selenium.Keys.Delete);
         }
 
         [When(@"I run the executable '(.*)'")]

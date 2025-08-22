@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "r+w7aobt7z0=",
+  "dgSpecHash": "OSXiXCqiu/s=",
   "success": true,
-  "projectFilePath": "E:\\Runningcopy - Copy\\RemoteWinAppAutomation.csproj",
+  "projectFilePath": "E:\\push\\RemoteWinAppAutomation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pbhar.LAPTOP-HTLJ4OVF\\.nuget\\packages\\appium.webdriver\\4.4.5\\appium.webdriver.4.4.5.nupkg.sha512",
     "C:\\Users\\pbhar.LAPTOP-HTLJ4OVF\\.nuget\\packages\\bodi\\1.5.0\\bodi.1.5.0.nupkg.sha512",
