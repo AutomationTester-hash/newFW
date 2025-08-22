@@ -14,6 +14,25 @@ namespace RemoteWinAppAutomation.StepDefinitions
     [Binding]
     public class PowerShellSteps
     {
+        [AfterScenario]
+        public void AfterScenarioCleanup()
+        {
+            // Attempt to close Notepad, Calculator, VirtualBox, and CustomApp if running
+            string[] processNames = { "notepad", "calc", "VirtualBox" };
+            foreach (var name in processNames)
+            {
+                var procs = System.Diagnostics.Process.GetProcessesByName(name);
+                foreach (var proc in procs) { try { proc.Kill(); } catch { } }
+            }
+
+            var customAppPath = _config?["PowerShell:CustomAppPath"];
+            if (!string.IsNullOrEmpty(customAppPath))
+            {
+                var exeName = System.IO.Path.GetFileNameWithoutExtension(customAppPath);
+                var customProcs = System.Diagnostics.Process.GetProcessesByName(exeName);
+                foreach (var proc in customProcs) { try { proc.Kill(); } catch { } }
+            }
+        }
         private static IConfiguration _config;
         private static ExtentReports _report;
         private static WindowsDriver<WindowsElement> _driver;
