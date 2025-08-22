@@ -203,7 +203,7 @@ namespace RemoteWinAppAutomation.Features
             {
                 this.ScenarioStart();
 #line 21
-    testRunner.When("I run the executable from config key \'PowerShell:VirtualBoxPath\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("I run the executable from config key \'PowerShell:CustomPath\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             }
             this.ScenarioCleanup();

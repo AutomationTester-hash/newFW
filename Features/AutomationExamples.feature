@@ -18,5 +18,5 @@
   And I wait for 5 seconds after opening Calculator
 
     Scenario: Start Oracle VirtualBox
-    When I run the executable from config key 'PowerShell:VirtualBoxPath'
+    When I run the executable from config key 'PowerShell:CustomPath'
   
