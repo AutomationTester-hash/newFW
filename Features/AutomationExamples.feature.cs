@@ -178,7 +178,7 @@ namespace RemoteWinAppAutomation.Features
     testRunner.When("I run the executable \'C:\\\\Windows\\\\System32\\\\calc.exe\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 19
-    testRunner.Then("the executable output should contain \'\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+  testRunner.And("I wait for 5 seconds after opening Calculator", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();

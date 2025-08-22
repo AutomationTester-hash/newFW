@@ -14,11 +14,17 @@ namespace RemoteWinAppAutomation.StepDefinitions
     [Binding]
     public class PowerShellSteps
     {
+        [When(@"I wait for 5 seconds after opening Calculator")]
+        public void WhenIWaitFor5SecondsAfterOpeningCalculator()
+        {
+            System.Threading.Thread.Sleep(5000);
+        }
         [AfterScenario]
         public void AfterScenarioCleanup()
         {
             // Attempt to close Notepad, Calculator, VirtualBox, and CustomApp if running
-            string[] processNames = { "notepad", "calc", "VirtualBox" };
+            // Add UWP Calculator process names as well
+            string[] processNames = { "notepad", "calc", "CalculatorApp", "ApplicationFrameHost", "VirtualBox" };
             foreach (var name in processNames)
             {
                 var procs = System.Diagnostics.Process.GetProcessesByName(name);
@@ -138,7 +144,23 @@ namespace RemoteWinAppAutomation.StepDefinitions
         public void WhenIRunTheExecutable(string exePath)
         {
             // Run the .exe and capture output
-            _output = RemoteWinAppAutomation.Utils.PowerShellRunner.RunCommand($"& '{exePath}'");
+            if (exePath.EndsWith("calc.exe", StringComparison.OrdinalIgnoreCase))
+            {
+                // Try launching calc.exe
+                _output = RemoteWinAppAutomation.Utils.PowerShellRunner.RunCommand($"Start-Process '{exePath}'");
+                // Wait a moment to see if Calculator process appears
+                System.Threading.Thread.Sleep(1500);
+                var calcProcs = System.Diagnostics.Process.GetProcessesByName("CalculatorApp");
+                if (calcProcs.Length == 0)
+                {
+                    // Fallback: try UWP method
+                    _output = RemoteWinAppAutomation.Utils.PowerShellRunner.RunCommand("start calculator:");
+                }
+            }
+            else
+            {
+                _output = RemoteWinAppAutomation.Utils.PowerShellRunner.RunCommand($"& '{exePath}'");
+            }
         }
 
         [Then(@"the executable output should contain '(.*)'")]

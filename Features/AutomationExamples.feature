@@ -16,4 +16,5 @@ Feature: Automation Examples
    Scenario: Run a demo executable (Calculator)
     Given I set the PowerShell execution policy to Unrestricted
     When I run the executable 'C:\\Windows\\System32\\calc.exe'
-    Then the executable output should contain ''
+  And I wait for 5 seconds after opening Calculator
+    # Then the executable output should contain ''

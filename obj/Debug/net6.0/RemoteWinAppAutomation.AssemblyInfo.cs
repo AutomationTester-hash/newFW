@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RemoteWinAppAutomation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e1680aac94f359c57000922daa12fe537536f129")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a2da52a239f23542853f6f05c755aee9375d1c1f")]
 [assembly: System.Reflection.AssemblyProductAttribute("RemoteWinAppAutomation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RemoteWinAppAutomation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
