@@ -17,6 +17,6 @@
     When I run the executable 'C:\\Windows\\System32\\calc.exe'
   And I wait for 5 seconds after opening Calculator
 
-    Scenario: Start Oracle VirtualBox
+    Scenario: Start custom application
     When I run the executable from config key 'PowerShell:CustomPath'
   
