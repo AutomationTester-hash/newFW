@@ -1,3 +1,4 @@
+
         
         
 using System;
@@ -14,6 +15,26 @@ namespace RemoteWinAppAutomation.StepDefinitions
     [Binding]
     public class PowerShellSteps
     {
+        [When(@"I run the executable from config key '(.*)'")]
+        public void WhenIRunTheExecutableFromConfigKey(string configKey)
+        {
+            string exePath = _config[configKey];
+            if (string.IsNullOrEmpty(exePath))
+            {
+                // Try as top-level key if not found as nested
+                var keyParts = configKey.Split(':');
+                if (keyParts.Length == 2)
+                {
+                    exePath = _config[keyParts[1]];
+                }
+            }
+            if (string.IsNullOrEmpty(exePath))
+            {
+                throw new Exception($"Config key '{configKey}' not found or empty in appsettings.json");
+            }
+            // Reuse the existing logic for launching executables
+            WhenIRunTheExecutable(exePath);
+        }
         [When(@"I wait for 5 seconds after opening Calculator")]
         public void WhenIWaitFor5SecondsAfterOpeningCalculator()
         {
